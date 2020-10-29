@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------------------------------------------
+/freeze vanilla command_block (13 command_block)by OPTICJUMPER : (2 colonnes de 6 command_block chacunes) / version 1.14 \
+---------------------------------------------------------------------------------------------------------------------
+La première colonne est faite pour afficher au milieu de l'écran que l'on est freeze et pour qu'il ne bouge plus.
+---------------------------------------------------------------------------------------------------------------------
+La deuxième colonne est faite pour afficher QUE pour cette personne dans son chat quel est freeze.
+---------------------------------------------------------------------------------------------------------------------
+Pour freeze : 
+/tag <pseudo> add frozzen
+---------------------------------------------------------------------------------------------------------------------
+Pour l'unfreeze : 
+/tag <pseudo> remove frozzen
+---------------------------------------------------------------------------------------------------------------------
+(Tout les command_blocks sont obliger d'être tous diriger ver le haut)
+---------------------------------------------------------------------------------------------------------------------
+Command_Block "normal" : orange
+Command_Block "chain"  : vert
+Command_Block "repeat" : violet
+---------------------------------------------------------------------------------------------------------------------
+Première colonnes :
+---------------------------------------------------------------------------------------------------------------------
+Premier command_block (repeat, always active):
+execute if entity @a[tag=frozzen]
+---------------------------------------------------------------------------------------------------------------------
+Deuxième command_block (chain, always active) :
+execute at @e[name=frezz] run tp @a[tag=frozzen] ~ ~ ~ 90 0
+---------------------------------------------------------------------------------------------------------------------
+Troisième command_block (chain, always active) :
+title @a[tag=frozzen] times 0 10 5
+---------------------------------------------------------------------------------------------------------------------
+Quatrième command_block (chain, always active) :
+title @a[tag=frozzen] title ["",{"text":"|||","bold":true,"color":"dark_aqua"},{"text":"VOUS ETES FREEZE","bold":true,"color":"aqua"},{"text":"||","bold":true,"color":"dark_aqua"}]
+---------------------------------------------------------------------------------------------------------------------
+Cinquième command_block (chain, always active) (derniers de la première colone) :
+title @a[tag=frozzen] subtitle {"text":"Un membre du staff va venir...","color":"gold"}
+---------------------------------------------------------------------------------------------------------------------
+ou (au choix)        
+---------------------------------------------------------------------------------------------------------------------
+title @a[tag=frozzen] subtitle {"text":"Cheat détecter !! Passe discord desuite","color":"gold"}
+---------------------------------------------------------------------------------------------------------------------
+Sixième command_block (chain, always active) :
+execute at @a[tag=frozzen] run particle minecraft:block ice ~ ~2 ~ 0.2 0.2 0.2 0 10 force @a
+---------------------------------------------------------------------------------------------------------------------
+Ensuite place un comparateur a coté du command_block repeat tout en bas.
+---------------------------------------------------------------------------------------------------------------------
+Au bout du comparateur place un command_block normale pour commencer la deuxième colone avec cette commande (met le en need redstone) :
+execute at @a[tag=frozzen] run summon minecraft:silverfish ~ ~1 ~ {CustomName:"\"frezz\"",CustomNameVisible:1,NoAI:1b,PersistenceRequired:1b,Silent:1,Invulnerable:1,ActiveEffects:[{Id:14,Amplifier:0,Duration:2147483647,ShowParticles:0b}]}
+---------------------------------------------------------------------------------------------------------------------
+Deuxième command_block (chain, always active) :
+tellraw @a[tag=frozzen] {"text":"VOUS ETES FREEZE","bold":true,"italic":true,"obfuscated":true,"color":"dark_aqua"}
+---------------------------------------------------------------------------------------------------------------------
+Troisième command_block (chain, always active) :
+tellraw @a[tag=frozzen] {"text":"VOUS ETES FREEZE","bold":true,"color":"aqua"}
+---------------------------------------------------------------------------------------------------------------------
+Quatrième command_block (chain, always active) :
+tellraw @a[tag=frozzen] {"text":"VOUS ETES FREEZE","bold":true,"italic":true,"obfuscated":true,"color":"dark_aqua"}
+---------------------------------------------------------------------------------------------------------------------
+Cinquième command_block (chain, always active) :
+execute at @e[name=frezz] run playsound minecraft:entity.enderman.teleport ambient @a[tag=frozzen] ~ ~ ~ 10 0
+---------------------------------------------------------------------------------------------------------------------
+Sixième command_block (chain, always active)
+execute at @e[name=frezz] run playsound minecraft:entity.enderman.teleport ambient @a[tag=frozzen] ~ ~ ~ 10 1
+---------------------------------------------------------------------------------------------------------------------
+Mettre une torche de redstone sur le command_block placer en bas de la deuxième colone (a l'opposer du reapeter qui se dirige vers se même command_block).
+---------------------------------------------------------------------------------------------------------------------
+Mettre un command_block normal (sans modification) face à la torch en redstone 
+kill @e [name=freez]
+---------------------------------------------------------------------------------------------------------------------
+Voilà un /freeze en vanilla sans plug-in
+---------------------------------------------------------------------------------------------------------------------
+Si vous avez un problème contacter moi sur discord Neversur YT#8221
+---------------------------------------------------------------------------------------------------------------------
+                                                                                    Entièrement creer par NeverSur YT
